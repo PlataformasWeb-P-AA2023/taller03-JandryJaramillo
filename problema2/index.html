@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Problema 2</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+	<div class="uno">
+		<p >Nombre: </p>
+		<input type="text" id="nombre">
+		<p >Apellido: </p>
+		<input type="text" id="apellido">
+		<p >Fecha de nacimiento: </p>
+		<input type="text" id="fecha">
+		<p></p>
+		<button id="btn">Generar Mensaje</button>
+	</div>
+
+	<div class="dos">
+		<p id="titulo"></p>		
+		<p id="nombres"></p>
+		<p id="apellidos"></p>
+		<p id="fechas"></p>
+	</div>
+
+</body>
+<script>
+    $(document).ready(()=>{
+    var fecha;
+
+    $("#fecha").datepicker(
+        {
+            inline: true,
+            showOtherMonths: true,
+            changeYear: true,
+            showOtherYears: true,
+        
+            dayNamesMin: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
+            dateFormat: "dd(/mm/yy",
+            onSelect: (selected_date)=>{
+                fecha = selected_date;
+            }
+        }
+    );
+
+    $("#btn").click(()=>{
+        var nombre = $("#nombre").val();
+        var apellido = $("#apellido").val();
+        $("#titulo").text("Datos ingresados");
+        $("#nombres").text(nombre);
+        $("#apellidos").text(apellido);
+        $("#fechas").text(fecha);        
+    })
+	});
+  </script>
+</html>

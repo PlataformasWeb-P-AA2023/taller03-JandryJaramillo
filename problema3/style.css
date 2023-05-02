@@ -1,0 +1,38 @@
+html  {    
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.country{
+    display: flex;
+    flex-direction: column;       
+    width: 30%;
+    padding: 10px;
+    margin: 15px;
+}
+
+.country h3{
+    display: block;
+    font-size: 60;
+    text-transform: uppercase;
+}
+.country label{
+    font-size: 25;
+    font-weight:bold;
+    margin: 20px 0px;
+}
+
+.country input{
+    height: 30px;
+    font-size: 25;
+    padding: 10px;   
+}
